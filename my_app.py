@@ -19,6 +19,14 @@ class MainWin(QWidget):
         self.hello_text = QLabel(txt_hello)
         self.instruction = QLabel(txt_instruction)
         self.button = QPushButton(txt_next)
+
+        
+        #layout
+        self.layout = QVBoxLayout()
+        self.layout.addWidget(self.hello_text, alignment = Qt.AlignLeft)
+        self.layout.addWidget(self.instruction, alignment = Qt.AlignLeft)
+        self.layout.addWidget(self.btn_next, alignment = Qt.AlignCenter)         
+        self.setLayout(self.layout)
     def connects(self):
         self.button.clicked.connect(self.next_click)
     def next_click(self):
